@@ -7,17 +7,44 @@
 
     <link rel="stylesheet" href="css\index.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <title>Bienvenido!</title>
 
 </head>
 <body>
     <div class="saludo">
-        <form action="index.html" id="formNombre">
+        <form action="index.html" id="formNombre" method="post">
             <label> HOLA, DIME TU NOMBRE </label>
             <br>
             <input type="text" name="nombre" id="nombre">
             <button type="submit">Send</button>
         </form>
     </div>
+
+    <script>
+
+        $( document ).ready(function() {
+
+           $('#formNombre').submit(function (e) { 
+               e.preventDefault(); 
+
+               console.log( "alto ahí!" );
+
+               $.ajax({
+                type: "post",
+                url: "url",
+                data: "data",
+                dataType: "dataType",
+                success: function (response) {
+                    
+                }
+               });
+            
+           });
+
+           
+        });
+    </script>
 </body>
 </html>
